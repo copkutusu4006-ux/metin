@@ -1,0 +1,194 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Büsrapp 2</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div id="app-container">
+
+        <!-- Üst başlık -->
+        <div id="profile-header">
+            <div class="profile-info">
+                <div class="avatar">
+                    <img src="b.jpeg alt="Uygulama Görseli">
+                </div>
+
+                <div class="profile-texts">
+                    <h3>Almanca Metinler</h3>
+                    <p>A1 Okuma ve Dinleme</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- Özel bildirim alanı -->
+        <div id="custom-alert" style="display:none;"></div>
+
+        <!-- ANA MENÜ -->
+        <div id="main-menu">
+            <h1>Kategori Seç</h1>
+
+            <button class="menu-btn" id="btn-kolay">Kolay</button>
+            <button class="menu-btn" id="btn-orta">Orta</button>
+            <button class="menu-btn" id="btn-zor">Zor</button>
+            <button class="menu-btn btn-sifirla" id="btn-sifirla">Tüm İlerlemeyi Sıfırla</button>
+        </div>
+
+        <!-- METİN EKRANI -->
+        <div id="reading-screen" style="display: none;">
+            <div class="reading-card">
+
+                <!-- Üst bilgi -->
+                <div class="reading-topbar">
+                    <div class="reading-badge" id="reading-level-badge">Kolay</div>
+                    <div class="reading-counter" id="reading-counter">Metin 1 / 40</div>
+                </div>
+
+                <div id="reading-remaining" class="reading-remaining">
+    Kalan: 0
+</div>
+
+                <!-- Başlık -->
+                <h2 id="reading-title">Im Park</h2>
+
+                <!-- Dinleme butonları -->
+                <div class="reading-audio-actions">
+                    <button class="btn-ses" id="btn-read-full">🔊 Tüm Metni Dinle</button>
+                    <button class="btn-ses" id="btn-stop-audio">⏹ Durdur</button>
+                </div>
+
+                <!-- Açıklama -->
+                <p class="reading-hint">
+                    Cümleye dokunursan sadece o cümle okunur.
+                </p>
+
+                <!-- Metin alanı -->
+                <div id="reading-text-box">
+                    <div id="reading-text" class="reading-text">
+                        <span class="reading-sentence">Anna ist im Park.</span>
+                        <span class="reading-sentence">Sie sitzt auf einer Bank.</span>
+                        <span class="reading-sentence">Sie liest ein Buch.</span>
+                        <span class="reading-sentence">Das Wetter ist schön.</span>
+                    </div>
+                </div>
+
+                <!-- Sorular -->
+                <div class="questions-section">
+                    <h3>Metin Soruları</h3>
+                    <form id="quiz-form">
+
+                        <!-- Soru 1 -->
+                        <div class="question-card">
+                            <p class="question-text">1. Anna ist im Park.</p>
+                            <label class="option-label">
+                                <input type="radio" name="q1" value="dogru">
+                                <span>Doğru</span>
+                            </label>
+                            <label class="option-label">
+                                <input type="radio" name="q1" value="yanlis">
+                                <span>Yanlış</span>
+                            </label>
+                        </div>
+
+                        <!-- Soru 2 -->
+                        <div class="question-card">
+                            <p class="question-text">2. Das Wetter ist schlecht.</p>
+                            <label class="option-label">
+                                <input type="radio" name="q2" value="dogru">
+                                <span>Doğru</span>
+                            </label>
+                            <label class="option-label">
+                                <input type="radio" name="q2" value="yanlis">
+                                <span>Yanlış</span>
+                            </label>
+                        </div>
+
+                        <!-- Soru 3 -->
+                        <div class="question-card">
+                            <p class="question-text">3. Wo ist Anna?</p>
+                            <label class="option-label">
+                                <input type="radio" name="q3" value="0">
+                                <span>Im Café</span>
+                            </label>
+                            <label class="option-label">
+                                <input type="radio" name="q3" value="1">
+                                <span>Im Park</span>
+                            </label>
+                            <label class="option-label">
+                                <input type="radio" name="q3" value="2">
+                                <span>Zu Hause</span>
+                            </label>
+                            <label class="option-label">
+                                <input type="radio" name="q3" value="3">
+                                <span>In der Schule</span>
+                            </label>
+                        </div>
+
+                        <!-- Soru 4 -->
+                        <div class="question-card">
+                            <p class="question-text">4. Was macht Anna?</p>
+                            <label class="option-label">
+                                <input type="radio" name="q4" value="0">
+                                <span>Sie schläft.</span>
+                            </label>
+                            <label class="option-label">
+                                <input type="radio" name="q4" value="1">
+                                <span>Sie spielt Fußball.</span>
+                            </label>
+                            <label class="option-label">
+                                <input type="radio" name="q4" value="2">
+                                <span>Sie liest ein Buch.</span>
+                            </label>
+                            <label class="option-label">
+                                <input type="radio" name="q4" value="3">
+                                <span>Sie kocht.</span>
+                            </label>
+                        </div>
+
+                        <!-- Soru 5 -->
+                        <div class="question-card">
+                            <p class="question-text">5. Wie ist das Wetter?</p>
+                            <label class="option-label">
+                                <input type="radio" name="q5" value="0">
+                                <span>Schön</span>
+                            </label>
+                            <label class="option-label">
+                                <input type="radio" name="q5" value="1">
+                                <span>Kalt</span>
+                            </label>
+                            <label class="option-label">
+                                <input type="radio" name="q5" value="2">
+                                <span>Schlecht</span>
+                            </label>
+                            <label class="option-label">
+                                <input type="radio" name="q5" value="3">
+                                <span>Windig</span>
+                            </label>
+                        </div>
+
+                    </form>
+                </div>
+
+                <!-- Sonuç alanı -->
+                <div id="quiz-result" class="quiz-result" style="display: none;">
+                    5 sorudan 0 doğru
+                </div>
+
+                <!-- Alt aksiyonlar -->
+                <div class="reading-action-buttons">
+                    <button id="btn-submit-answers" class="action-btn primary-btn">Cevapla</button>
+                    <button id="btn-next-text" class="action-btn secondary-btn">İlerle</button>
+                </div>
+
+                <button id="btn-back-menu" class="menu-btn secondary-menu-btn">Ana Menüye Dön</button>
+            </div>
+        </div>
+
+    </div>
+
+    <script src="metinler.js"></script>
+    <script src="script.js"></script>
+</body>
+</html>
